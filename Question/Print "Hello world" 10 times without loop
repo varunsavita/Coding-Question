@@ -1,0 +1,19 @@
+// Print "Hello world" 10 times without loop
+
+#include<stdio.h>
+void printFunc(short);
+
+void printFunc(short temp){
+    
+    if(temp !=0){
+        printf("%d,  Hello world\n", temp);
+        printFunc(--temp);
+    }
+        
+}
+
+main() {
+
+    short num = 10;
+    printFunc(num);
+}
