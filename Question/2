@@ -1,0 +1,19 @@
+// Write a program for Sum of the digits of a given number ( without loop)
+
+#include<stdio.h>
+
+int sumFun(int);
+
+int sumFun(int data){
+    if (data != 0)
+        return ( (data % 10) + sumFun(data / 10));
+    else 
+        return 0;
+}
+
+main(void) {
+    int num = 123456;
+    int sum = 0;
+    sum = sumFun(num);
+    printf("%d",sum);
+}
