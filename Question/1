@@ -1,1 +1,20 @@
-Write a program for Sum of the digits of a given number
+//Write a program for Sum of the digits of a given number
+
+#include<stdio.h>
+
+int getSum(int);
+
+int getSum(int data){
+    int temp = 0;
+    while(data !=0){
+        temp = temp + data % 10;
+        data = data / 10;
+    }
+    return temp;
+}
+
+main(void) {
+
+    int num = 123456;
+    printf("%d",getSum(num));
+}
