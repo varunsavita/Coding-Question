@@ -1,0 +1,38 @@
+// WAP to find the smallest and largest element in Array
+
+#include<stdio.h>
+
+#define ARRAY_SIZE      10
+
+void findNum(int [], int , int *, int *);
+void displayNum(int *, int *);
+
+void findNum(int arrData[], int arrLen, int *minData, int *maxData){
+
+    *minData = arrData[0];
+    *maxData = arrData[0];
+    for(int i =0; i < arrLen; i++){
+        if(*minData > arrData[i])
+            *minData = arrData[i];
+
+        if(*maxData < arrData[i])
+            *maxData = arrData[i];
+    } 
+}// End of findNum
+
+void displayNum(int *minData, int *maxData){
+
+    printf("smallest element in Array - %d \n", *minData);
+    printf("largest element in Array - %d \n", *maxData);
+}
+
+
+int main(){
+
+    int arr[ARRAY_SIZE] = {10, 2, 3, 4, 5, 6, 7, 8, 9, 100};
+    int min, max;
+    findNum(arr, ARRAY_SIZE, &min, &max);
+    displayNum(&min, &max);
+
+    return 0;
+}
