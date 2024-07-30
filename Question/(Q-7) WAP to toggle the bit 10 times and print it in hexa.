@@ -1,0 +1,19 @@
+/* input data = 0XAA (0b1010 1010)
+//invert 0101 0101
+
+#include<stdio.h>
+
+short  LOOP_COUNT = 10;
+int data = 0b10101010;
+
+main(){
+
+
+    while(LOOP_COUNT != 0){
+        data = data ^ 0b11111111;
+        printf("LOOP_COUNT - %d,  %x  \n", LOOP_COUNT, data);
+        LOOP_COUNT--;
+    }
+
+}
+
