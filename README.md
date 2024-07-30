@@ -7,3 +7,9 @@
 (Q-4)  WAP reverse the element of array.
 
 (Q-5)  WAP to find the smallest and largest element in Array.
+
+(Q-6) WAP reverse the number 123 to 321.
+
+(Q-7) WAP to toggle the bit 10 times and print it in hexa. 
+
+(Q-8) WAP to Ordinal rank
