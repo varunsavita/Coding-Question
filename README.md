@@ -12,4 +12,6 @@
 
 (Q-7) WAP to toggle the bit 10 times and print it in hexa. 
 
-(Q-8) WAP to Ordinal rank
+(Q-8) WAP to generating Ordinal rank
+
+(Q-9) WAP to making change coin
