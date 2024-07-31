@@ -1,0 +1,55 @@
+/*
+    There is 4 Coins
+    A quarter, a dime, a nickel, a penny 
+    These are the common units of coinage in the United States.
+    When you pay with cash, you get a handful of these coins as change.
+    Given a specific doller amount (Calculate making change with the fewest numbers of coins).
+    
+    US currency nickname conversion: 
+    a penny = 1 cent
+    a nickel = 5 cents
+    a dime = 10 cents
+    a quarter = 25 cents
+    Example - 98 cents = 3 quater, 2 dimes, 3 pennies
+
+    But input is 
+    1) $0.49
+    2) $1.27
+    3) $0.75
+    4) $0.83
+
+*/
+
+#include<stdio.h>
+
+#define INPUT_LEN       4
+
+int main(){
+    float doller[INPUT_LEN] = {0.49, 1.27, 0.75, 0.83};
+
+    for (int i= 0; i < INPUT_LEN; i++){
+
+        int cents = doller[i] * 100;
+        printf("Making change of $%f = ", doller [i]);
+        if((cents / 25)) {
+            printf("  --  quarter %3d \t", (cents /25)); 
+            cents %= 25;
+        }
+        if((cents / 10)) {
+            printf("--  dime %3d \t", (cents /10)); 
+            cents %= 10;
+        }
+        if((cents / 5)) {
+            printf("--  nickel %3d \t", (cents /5)); 
+            cents %= 5;
+        }
+        if((cents / 1)) {
+            printf("--  penny %3d \t", (cents /1)); 
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
