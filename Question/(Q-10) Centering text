@@ -1,0 +1,53 @@
+
+/*
+"March Sales",
+"My First Project",
+"Centering output is so much fun!",
+"This title is very long, just to see whether the code can handle such a long title"
+*/    
+
+/*
+ 
+                                             March Sales
+                                          My First Project
+                                  Centering output is so much fun!
+         This title is very long, just to see whether the code can handle such a long title
+*/
+
+#include<stdio.h>
+
+#define CENTER_TEXT     50
+#define ARR_LEN         4
+
+void center_text(short width, const char * text){
+    
+    short text_len = 0;
+    for(text_len = 0; text[text_len] != '\0'; ++text_len);
+    //printf("%d",text_len);
+
+    short Space_len = width - text_len/2;
+    
+    if (Space_len >= 0){    
+        while(Space_len !=0){
+            printf(" ");
+            Space_len--;
+        }
+    }
+    printf("%s\n", text); 
+}
+
+
+int main(){
+
+    const char* title[ARR_LEN] = {
+        "March Sales",
+        "My First Project",
+        "Centering output is so much fun!",
+        "This title is very long, just to see whether the code can handle such a long title"
+    };
+
+    for( int i =0; i< ARR_LEN; i++){
+        center_text(CENTER_TEXT, title[i]);
+        //printf("%s\n", title[i]); 
+    }
+}
