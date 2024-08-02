@@ -19,3 +19,5 @@
 (Q-0010) WAP Centering text
 
 (Q-0011) WAP Simulating the hailstone sequence
+
+(Q-0012) WAP to check weather number is even or odd
