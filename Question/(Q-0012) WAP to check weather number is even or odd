@@ -1,0 +1,23 @@
+/*
+    WAP to check weather number is even or odd
+
+*/
+
+#include<stdio.h>
+
+int checkEvenOddFunc(int value){
+    return (value & 1);
+}
+
+int main(){
+
+    int num = 0; 
+    printf("please enter the number");
+    scanf("%d",&num);
+    if(checkEvenOddFunc(num))
+        printf("number is odd");
+    else 
+        printf("number is even");
+
+    return 0;
+}
