@@ -1,0 +1,26 @@
+/*
+    WAP to check the given number format is in binary or not
+*/
+
+#include <stdio.h>
+
+int is_binary_number(int value){
+    while(value){
+        if( (value % 10 != 1) && (value % 10 != 0))
+            return 0;
+        value = value / 10;
+    }
+    return 1;
+}
+
+
+int main(){
+    int num;
+    printf("please enter the number");
+    scanf("%d",&num);
+    if(is_binary_number(num))
+        printf("number is binary format");
+    else 
+        printf("number is not binary format");
+    return 0;
+}
