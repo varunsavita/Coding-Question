@@ -21,3 +21,5 @@
 (Q-0011) WAP Simulating the hailstone sequence
 
 (Q-0012) WAP to check weather number is even or odd
+
+(Q-0013) WAP to check the given number format is in binary or not
