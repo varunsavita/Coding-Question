@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+void swapFunc_extraVariable(int *, int *);
+void swapFunc_extraWithoutVariable(int *, int *);
+void swapFunc_bitwise(int *, int *);
+
+void swapFunc_extraVariable(int *a, int *b)   {
+
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void swapFunc_extraWithoutVariable(int *a, int *b){
+
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+
+void swapFunc_bitwise(int *a, int *b){
+
+    *a = *a ^ *b;
+    *b = *a ^ *b;
+    *a = *a ^ *b;
+}
+
+int main(){
+    int  num1 = 6, num2 = 7;
+    printf("Before swap --num1 =  %d, num2=  %d \n", num1, num2);
+    swapFunc_extraVariable(&num1,&num2);
+    printf("swapFunc_extraVariable --num1 =  %d, num2=  %d \n", num1, num2);
+    swapFunc_extraWithoutVariable(&num1,&num2);
+    printf("swapFunc_extraWithoutVariable --num1 =  %d, num2=  %d\n", num1, num2);
+    swapFunc_bitwise(&num1,&num2);
+    printf("swapFunc_bitwisee --num1 =  %d, num2=  %d\n", num1, num2);
+    
+    return 0;
+}
