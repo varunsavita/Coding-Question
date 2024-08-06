@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdbool.h>
+
+bool is_leapYear(int year){
+    
+    if(year%400 == 0)    return true;
+    if(year%100 == 0)    return false;
+    if(year%4 == 0)      return true;
+    return false;
+}
+
+void display(int val){
+    printf("%d -- ", val);
+    if(is_leapYear(val))
+        printf("is leap year \n");
+    else 
+        printf("is not leap year \n");
+}
+
+int main(){
+
+    for(int i = 2000; i <= 2024; i++)
+        display(i); 
+   
+    return 0;
+}
