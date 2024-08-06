@@ -25,3 +25,5 @@
 (Q-0013) WAP to check the given number format is in binary or not
 
 (Q-0014) WAP to swap 2 number.
+
+(Q-0015) WAP to Check Leap year.
