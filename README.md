@@ -27,3 +27,5 @@
 (Q-0014) WAP to swap 2 number.
 
 (Q-0015) WAP to Check Leap year.
+
+(Q-0016) WAP to crop the string.
