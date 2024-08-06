@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *left(char *s,int len)
+{
+    static char *buf;
+    int i=0;
+
+    /* allocate storage */
+    buf = (char*)malloc((sizeof(char)) * (len + 1));
+
+    if(buf == NULL){
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+
+    for(i = 0; i< len;i++){
+        *(buf+i) = *(s+i);
+    } 
+    *(buf+i) = '\0';
+    
+    return (buf);
+     
+}
+
+char *right(char *s,int len)
+{
+    static char *buf;
+    int i=0;
+    int strLen = 0;
+
+    while(s[i] != '\0'){
+        i++;
+    }
+
+    strLen = i - len;
+
+    /* allocate storage */
+    buf = (char*)malloc((sizeof(char)) * (len + 1));
+
+    if(buf == NULL){
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+
+    for(i = 0; i<len; i++){
+        *(buf+i) = *(s+i+ strLen);
+    } 
+    *(buf+i) = '\0';
+    
+    return (buf);
+}
+
+char *mid(char *s,int offset, int len)
+{
+    static char *buf;
+    int i;
+
+    /* allocate storage */
+    buf = (char*)malloc((sizeof(char)) * (offset + 1));
+
+    if(buf == NULL){
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+
+    for(i = 0; i<offset; i++){
+        *(buf+i) = *(s+i+ len);
+        if( *(buf+i)=='\0')		/* avoid overflow */
+			break;
+    } 
+    *(buf+i) = '\0';
+    
+    return buf;
+}
+
+int main()
+{
+	char string[] = "Once upon a time, there was a string";
+
+	printf("Original string: %s\n",string);
+	printf("Left %d characters: %s\n",16,left(string,16));
+	printf("Right %d characters: %s\n",18,right(string,18));
+	printf("Middle %d characters: %s\n",11,mid(string,13,11));
+
+	return(0);
+}
