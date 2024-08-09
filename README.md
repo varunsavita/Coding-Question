@@ -29,3 +29,5 @@
 (Q-0015) WAP to Check Leap year.
 
 (Q-0016) WAP to crop the string.
+
+(Q-0017) WAP to check Pre and post increment 
