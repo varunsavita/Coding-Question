@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(){
+    volatile int a= 20;
+    printf("%d %d \n",a,a++); // ( 21 , 20 )
+    a=20;
+    printf("%d %d \n",a++,a); // ( 20 ,  20)
+    a=20;
+    printf("%d %d %d \n",a,a++,++a);// ( 22,21 ,21);
+    return 0;
+}
