@@ -31,3 +31,6 @@
 (Q-0016) WAP to crop the string.
 
 (Q-0017) WAP to check Pre and post increment 
+
+(Q-0018) WAP to multiple 2 numbers (Russian Peasant Algorithm)
+
