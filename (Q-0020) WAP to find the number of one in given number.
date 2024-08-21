@@ -1,0 +1,26 @@
+// Count the number of ones in the binary representation of the given number.
+
+#include<stdio.h>
+
+unsigned int findNumberOfCountOne(unsigned int)
+
+
+unsigned int findNumberOfCountOne(unsigned int x){
+
+    unsigned char count = 0; // Local Variable (Store in Stack)
+
+    while(x) {
+        x = x & (x-1); 
+        count++;
+    }
+    return count; 
+    
+}
+
+int main(){
+
+    for(int i = 1; i <= 15; i++)
+        printf("Find the number of count one in given number %3d :%3x  :%5d \n", i, i,findNumberOfCountOne(i)); 
+    
+    return 0;
+}
