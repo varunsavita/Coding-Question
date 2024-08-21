@@ -35,3 +35,5 @@
 (Q-0018) WAP to multiple 2 numbers (Russian Peasant Algorithm)
 
 (Q-0019) WAP to check if a given number is a power of 2.
+
+(Q-0020) WAP to find the number of one in given number
