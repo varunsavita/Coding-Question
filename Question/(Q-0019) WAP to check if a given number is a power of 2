@@ -1,0 +1,22 @@
+// (Q-0019) WAP to check if a given number is a power of 2.
+
+#include<stdio.h>
+#include<stdbool.h>
+
+bool isPowerOfTwo(unsigned int )
+
+bool isPowerOfTwo(unsigned int x){
+    if((x & (x-1)) == 0 )
+        return true;
+    return false;
+}
+
+
+int main(){
+
+     for(int i = 2; i <= 100; i++)
+        if (isPowerOfTwo(i))
+            printf("power of two %d :True \n", i); 
+
+    return 0;
+}
