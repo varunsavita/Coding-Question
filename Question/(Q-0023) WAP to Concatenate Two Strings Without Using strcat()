@@ -1,0 +1,36 @@
+// WAP to Concatenate Two Strings Without Using strcat()
+
+#include<stdio.h>
+
+#define BUFFER_1       100
+#define BUFFER         200 
+
+
+int main(){
+
+    char str[BUFFER], str1[BUFFER_1];
+    int i = 0, j= 0;
+
+    printf("Please enter the string - 1\n");
+    fgets(str, BUFFER, stdin);
+    printf("Please enter the string - 2 \n");
+    fgets(str1, BUFFER_1, stdin);
+
+    while(str[i] != '\0' && str[i] != '\n'){
+        i++;
+    }
+
+    str[i++] = ' ';
+    //Find the end of the first string
+    while(str1[j] != '\0' && str[j] != '\n'){
+        str[i] = str1[j];
+        i++;
+        j++;
+    }
+
+    str[i] = '\0';
+
+    puts(str);
+
+    return 0;
+}
