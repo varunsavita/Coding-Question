@@ -41,3 +41,5 @@
 (Q-0021) WAP to multiply any number by 2 to 10 in the fastest manner.
 
 (Q-0022) WAP for string copy without using library function.
+
+(Q-0023) WAP to Concatenate Two Strings Without Using strcat().
