@@ -37,3 +37,5 @@
 (Q-0019) WAP to check if a given number is a power of 2.
 
 (Q-0020) WAP to find the number of one in given number
+
+(Q-0021)  WAP to multiply any number by 2 to 10 in the fastest manner.
