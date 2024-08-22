@@ -8,6 +8,7 @@
 
 int main(){
 
+/* 
     char str[BUFFER], strcpyData[BUFFER], i;
     printf("please enter the string");
     fgets(str, BUFFER, stdin);
@@ -19,5 +20,27 @@ int main(){
     strcpyData[i] = '\0';
     printf(" After copy string: %5s\n",strcpyData);
 
+*/
+
+/* 
+    Changed i from char to int to ensure proper indexing of the arrays.
+    Starting i as 0 directly, rather than declaring it later, for better initialization.
+    while loop is used instead of a for loop. This makes it clearer that the loop is solely 
+    for copying the string until the null terminator (\0) is encountered.
+*/
+    char str[BUFFER], strcpyData[BUFFER];
+    int i = 0;
+    printf("please enter the string");
+    fgets(str, BUFFER, stdin);
+    printf(" Before copy string: %5s\n",str);
+
+    while(str[i] != '\0'){
+        strcpyData[i] = str[i];
+        i++;
+    }
+    strcpyData[i] = '\0';
+    printf(" After copy string: %5s\n",strcpyData);
+
     return 0;
+
 }
