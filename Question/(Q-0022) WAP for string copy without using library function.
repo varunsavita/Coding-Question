@@ -1,0 +1,23 @@
+/*
+    write a program for string copy without using library function
+*/
+
+#include<stdio.h>
+#define BUFFER      100
+
+
+int main(){
+
+    char str[BUFFER], strcpyData[BUFFER], i;
+    printf("please enter the string");
+    fgets(str, BUFFER, stdin);
+    printf(" Before copy string: %5s\n",str);
+
+    for(i = 0; str[i] != '\0'; i++){
+        strcpyData[i] = str[i];
+    }
+    strcpyData[i] = '\0';
+    printf(" After copy string: %5s\n",strcpyData);
+
+    return 0;
+}
