@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+struct emp
+{
+    char name[10];
+    int id;
+    short exp;
+};
+ 
+void display(struct emp *data){
+    printf("emp name: %3s\n", data->name);
+    printf("emp id: %3d\n", data->id);
+    printf("emp exp: %3d\n", data->exp);
+
+ }
+
+void inputdata(struct emp *data){
+    printf("please enter the emp name");
+    scanf("%s",data->name);
+    printf("please enter the emp id");
+    scanf("%d", &(data->id));
+    printf("please enter the emp exp");
+    scanf("%hd", &(data->exp));
+}
+
+int main(){
+
+    //struct emp empData1 = {"varun",2, 4};
+    struct emp empData[2];
+    for(int i =0; i < 2; i++){
+        inputdata(&empData[i]);
+    }
+    
+    for(int i =0; i < 2; i++){
+        display(&empData[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
