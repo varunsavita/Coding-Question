@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+typedef int (*operation)(int a , int b);
+
+typedef enum {
+
+    SUM,
+    SUB,
+    MULTIPLE,
+    DIVIDE,
+    NUM_OPERATION // total number of operation 
+} OperationType;
+
+int sum(int a, int b){
+    return (a+b);
+}
+
+int sub(int a, int b){
+    return (a-b);
+}
+
+int multiple(int a, int b){
+    return (a*b);
+}
+
+int divide(int a, int b){
+    if(b != 0)
+        return (a/b);
+    else {
+        printf("not able to divide \n");
+        return 0;
+    }
+}
+
+int main(){
+    int num1 = 10, num2 = 5;
+
+    operation ops[NUM_OPERATION] = {sum, sub, multiple, divide};
+    const char *op_names[NUM_OPERATION] = {"Addition", "Subtraction", "Multiplication", "Division"};
+    
+    for(int opName = (int)SUM; opName < (int)NUM_OPERATION; opName++){
+        printf("%-14s: num1 = %3d, num2 = %3d, result = %5d\n", op_names[opName], num1, num2, ops[opName](num1, num2));
+    }
+    
+    return 0;
+}
