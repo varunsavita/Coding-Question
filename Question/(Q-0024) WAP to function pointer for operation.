@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+int (*operation)(int a , int b);
+
+int sum(int a, int b){
+    return (a+b);
+}
+
+int sub(int a, int b){
+    return (a-b);
+}
+
+int multiple(int a, int b){
+    return (a*b);
+}
+
+int divide(int a, int b){
+    if(b != 0)
+        return (a/b);
+    else {
+        printf("not able to divide \n");
+        return 0;
+    }
+}
+
+int main(){
+    int num1 = 10, num2 = 5;
+    operation = sum;
+    printf("print the sum: %3d\n", operation(num1, num2));
+    operation = sub;
+    printf("print the sub: %3d\n", operation(num1, num2));
+    operation = multiple;
+    printf("print the multiple: %3d\n", operation(num1, num2));
+    operation = divide;
+    printf("print the divide: %3d\n", operation(num1, num2));
+    return 0;
+}
