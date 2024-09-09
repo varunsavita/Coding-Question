@@ -43,3 +43,5 @@
 (Q-0022) WAP for string copy without using library function.
 
 (Q-0023) WAP to Concatenate Two Strings Without Using strcat().
+
+(Q-0024) WAP to take 2 employee data name, Id, exp and display it.
