@@ -49,3 +49,5 @@
 (Q-0025) WAP to function pointer for operation.
 
 (Q-0026) WAP to function pointer for operation (more readable).
+
+(Q-0027) WAP to function pointer for custom sorting.
