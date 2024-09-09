@@ -47,3 +47,5 @@
 (Q-0024) WAP to take 2 employee data name, Id, exp and display it.
 
 (Q-0025) WAP to function pointer for operation.
+
+(Q-0026) WAP to function pointer for operation (more readable).
