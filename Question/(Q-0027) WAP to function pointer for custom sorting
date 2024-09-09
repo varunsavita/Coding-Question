@@ -1,0 +1,49 @@
+/*
+    function pointer for custom sorting. 
+*/
+
+#include<stdio.h>
+#define ARR_LEN     6
+
+typedef int(*compare)(int , int );
+
+int ascending(int a, int b){
+    return (a > b);
+}
+
+int descending(int a, int b){
+    return (a < b);
+}
+
+void sort(int arrdata[], int arrLen, compare order ){
+
+    for(int i = 0; i < arrLen-1; i++){
+        for(int j = 0; j < arrLen -i -1 ; j++){
+            if(order(arrdata[j], arrdata[j+1])){
+                int temp     = arrdata [j];
+                arrdata[j]   = arrdata[j+1];
+                arrdata[j+1] = temp;
+            }
+        }
+    }
+
+     for(int i = 0; i < ARR_LEN; i++) {
+        printf("%d ", arrdata[i]);
+    }
+}
+
+
+int main(){
+    int arr[ARR_LEN] = {2, 1, 8, 4, 7, 3};
+
+    // Sort in ascending order
+    printf("Sorting in Ascending Order:\n");
+    sort(arr, ARR_LEN, ascending);
+    //display(arr, 6);
+
+    // Sort in descending order
+    printf("Sorting in Descending Order:\n");
+    sort(arr, 6, descending);
+
+    return 0;
+}
