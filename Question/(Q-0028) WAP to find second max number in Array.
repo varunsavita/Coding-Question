@@ -1,0 +1,32 @@
+/*
+    You initialize both max and secmax to 0, but if your array contains only negative values, 
+    the logic may not work correctly. You could initialize max and secmax to very small numbers 
+    (like INT_MIN from limits.h) to handle arrays with negative values properly.
+*/
+
+#include<stdio.h>
+#include<limits.h>
+
+void get2max(int arr[], int len){
+    int max = INT_MIN;
+    int secmax = INT_MIN;
+    
+    for(int i = 0; i < len; i++){
+         // If the current element is greater than max, update max and secmax
+        if (max < arr[i] ){
+            secmax = max;
+            max = arr[i];
+        }
+        // If the current element is less than max but greater than secmax
+        else if(arr[i] > secmax && arr[i] < max) {
+            secmax = arr[i];
+        }       
+    }
+    printf("max: %3d, secmax: %3d\n", max, secmax);
+}
+
+int main(){
+    int arrData[10] = {109, -77, -10, -43, -71, -54, -23, -70, -56, -5};
+    get2max(arrData, 10);
+    return 0;
+}
