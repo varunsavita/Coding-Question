@@ -53,3 +53,5 @@
 (Q-0027) WAP to function pointer for custom sorting.
 
 (Q-0028) WAP to find second max number in Array.
+
+(Q-0029) WAP to find largest and smallest number in an array.
