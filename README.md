@@ -51,3 +51,5 @@
 (Q-0026) WAP to function pointer for operation (more readable).
 
 (Q-0027) WAP to function pointer for custom sorting.
+
+(Q-0028) WAP to find second max number in Array.
