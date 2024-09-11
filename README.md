@@ -57,3 +57,5 @@
 (Q-0029) WAP to find largest and smallest number in an array.
 
 (Q-0030) WAP to find the character count in the string.
+
+(Q-0031) WAP to find the number vowels and consonants in the string.
