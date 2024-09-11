@@ -1,0 +1,39 @@
+/*
+    Remove Characters in String Except Alphabets
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void filterString(char str[], char cRm, int len){
+
+    char *str1;
+    str1 = (char*) malloc((sizeof (char)) * len);
+    int i = 0;
+    while(*str){
+        if(*str != cRm){
+            str1[i] = *str;
+            i++;
+        }
+        str++;
+    }
+    str1[i] = '\0';
+    printf("After remove char: '%c' and string: %s\n",cRm, str1);
+
+    free(str1);// Free the dynamically allocated memory to avoid memory leaks
+}
+
+int main(){
+    char str[] ="varun varun varun varun savita savita savita savita Kumar kumar Kumar kumar";
+    //char str[] = "zxcvbnmlkjhgfdsaqwertyuiop";
+    //char str[] = "zxcvbnmlkjhgfdsaqwertyuiop 0987654321";
+    char cRemove;
+    printf("Please enter the char which you want to remove from string\n");
+    scanf(" %c", &cRemove);
+    printf("Before remove string %s\n", str);
+    int len = sizeof(str); // no of characters with null
+    printf("string length: %3d\n", len);
+    filterString(str, cRemove, len);
+    
+    return 0;
+}
