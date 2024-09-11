@@ -11,28 +11,26 @@ void findCountOfChar(char str[]){
     int vowelCount = 0;
     int consonantCount = 0;
     int spaceCount = 0;
+    int digitCount = 0;
     while(*str){
         if (*str >= 'a' && *str <= 'z'){
             *str -=32;
         }
 
-        if(*str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U'){
-            vowelCount++;
-        }
-        else if(*str == 32) 
-            spaceCount++;
-        else if(*str >= 'A' && *str <= 'Z') { 
-            consonantCount++;
-        }
+        if(*str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U')     vowelCount++;
+        else if(*str == 32)                     spaceCount++;
+        else if(*str >= 'A' && *str <= 'Z')     consonantCount++;
+        else if(*str >= '0' && *str <= '9')     digitCount++;
 
         str++;
     }
-    printf("ChvowelCountar occurs %d times, consonantCount occurs %d times, spaceCount occurs %d times   in the string.\n", vowelCount, consonantCount, spaceCount);
+    printf("ChvowelCountar occurs %d times, consonantCount occurs %d times, spaceCount occurs %d times, and digit occurs %d times in the string.\n", vowelCount, consonantCount, spaceCount, digitCount);
 }
 
 int main(){
-    char str[] ="varun varun varun varun savita savita savita savita Kumar kumar Kumar kumar";
+    //char str[] ="varun varun varun varun savita savita savita savita Kumar kumar Kumar kumar";
     //char str[] = "zxcvbnmlkjhgfdsaqwertyuiop";
+    char str[] = "zxcvbnmlkjhgfdsaqwertyuiop 0987654321";
     findCountOfChar(str);
     return 0;
 }
