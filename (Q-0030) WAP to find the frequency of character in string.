@@ -1,0 +1,31 @@
+/*
+    Find the number of character in a string.
+    -> The ASCII value of the null character is zero. 
+    -> scanf(" %c", &charname): 
+    Added a space before %c in scanf to consume any trailing newline or whitespace characters.
+*/
+
+#include<stdio.h>
+
+int findCountOfChar(char str[], char cdata){
+
+    int charCount = 0;
+    while(*str){
+        if(*str == cdata){
+            charCount++;
+        }
+        str++;
+    }
+    return charCount;
+}
+
+int main(){
+    char str[] ="varun varun varun varun savita savita savita savita";
+    char charname;
+    int charCount = 0;
+    printf("please enter the char which you want to count\n");
+    scanf(" %c", &charname);
+    charCount = findCountOfChar(str, charname);
+    printf("Char '%c' occurs %d times in the string.\n", charname, charCount);
+    return 0;
+}
