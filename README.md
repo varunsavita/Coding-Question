@@ -67,3 +67,5 @@
 (Q-0034) WAP to find the string after remove all character that in str2. 
 
 (Q-0035) WAP to find the reverse string.
+
+(Q-0036) WAP to find Pointer to constant and constant pointer.
