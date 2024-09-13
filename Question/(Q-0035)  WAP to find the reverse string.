@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void reverse(const char str[], int len){
+
+    char *buf;
+    buf = (char*)malloc((sizeof(char))*len);
+    if(buf == NULL){
+        printf("not allocated memory\n");
+        return;
+    }
+
+    int i = 0;
+    int arrindex = len -2;
+    while(arrindex>= 0){
+        buf[i++] = str[arrindex--]; 
+    }
+
+    buf[i] = '\0';
+    printf("after remove characters from string: %s\n", buf);
+    free(buf);
+}
+
+int main(){
+    char str[] = "varun kumar savita";
+    printf("Original string: %s\n", str);
+    int strlen = sizeof(str);
+    printf("length of str: %d\n", strlen);
+    reverse(str, (strlen));
+    return 0;
+}
