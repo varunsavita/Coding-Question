@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void rmWordFunc(const char str[], int len, const char word[]){
+
+    char *buf;
+    int bufCount = 0;
+    buf = (char*)malloc((sizeof(char))*len);
+    if (buf == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+
+    int wordlen = 0;
+    for(int i = 0; i < word[i] != '\0'; i++){
+        wordlen++;
+    }
+
+    while(*str){
+
+        int match = 1;
+        for(int i = 0; i < wordlen; i++){
+            if(*(str+i) !=  word[i]){
+                match = 0;
+                break;
+            }
+        }
+
+        if(match && (str[wordlen] == ' ' || str[wordlen] == '\0')){
+            str += wordlen;
+        }else{
+            buf[bufCount++] = *str++;
+        }
+    }
+    //*(--str) = 'M';
+    buf[bufCount] = '\0';
+    printf("After remove '%s' word from string '%s'\n", word, buf);
+    free(buf); // free dynamic memory
+}
+
+
+int main(){
+
+    char str[] = "varun kumar savita varus kumas savits varun kumar savita"; 
+    //char rmword[] = "varus";
+    char rmword[10];
+    printf("Please enter the remove word \n");
+    scanf(" %s", rmword);
+    int strlen = sizeof(str);
+    printf("String len: %d\n", strlen);    
+    printf("Before remove '%s' word from string '%s'\n", rmword, str);
+    rmWordFunc(str, strlen, rmword);
+    printf("Before remove '%s' word from string '%s'\n", rmword, str);
+    return 0;
+}
