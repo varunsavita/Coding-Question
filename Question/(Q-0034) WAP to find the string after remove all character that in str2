@@ -1,0 +1,47 @@
+/*
+  
+
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void rmChar(const char str1[], const char str2[], int len){
+
+    char *buf = (char*) malloc((sizeof(char))*len);
+
+    int i = 0;
+    
+    while(*str1){
+        int notfoundChar = 1;
+        for(int j = 0; str2[j] != '\0'; j++){
+            if(*str1 == str2[j]){
+                notfoundChar = 0;
+                break;
+            }
+        }// end for loop
+
+        if(notfoundChar){
+            buf[i++] = *str1;
+        }
+        str1++;
+    }
+    buf[i] = '\0';
+    printf("after remove characters from string: %s\n", buf);
+    free(buf);
+}
+
+int main(){
+
+    char str1[] = "varun Varun SAVITA Savita kumar KuamR, KUMAr savITA";
+    char str2[] = "satv";
+
+    int strlen1 = sizeof(str1);
+
+    printf("Before remove characters from string: %s\n", str1);
+    printf("length of str1: %d\n", strlen1);
+
+    rmChar(str1,str2, strlen1);
+    printf("after remove characters and original string: %s\n", str1);
+    return 0;
+}
