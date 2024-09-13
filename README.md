@@ -63,3 +63,5 @@
 (Q-0032) WAP to find the string after remove character.
 
 (Q-0033) WAP to find the string after remove word.
+
+(Q-0034) WAP to find the string after remove all character that in str2. 
