@@ -61,3 +61,5 @@
 (Q-0031) WAP to find the number vowels and consonants in the string.
 
 (Q-0032) WAP to find the string after remove character.
+
+(Q-0033) WAP to find the string after remove word.
