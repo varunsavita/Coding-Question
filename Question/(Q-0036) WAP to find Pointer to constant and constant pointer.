@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main(){
+
+    int a = 2;
+    int b = 3;
+
+    int const *ptr1 = &a; // Pointer to a constant integer (you can't modify the value it points to)
+    int *const ptr2 = &b; // Constant pointer to an integer (you can't modify the pointer itself)
+    
+    printf("ptr1 points to value: %d\n", *ptr1);
+    printf("ptr2 points to value: %d\n", *ptr2);
+    
+    // *ptr1 = 100; // invalid: ptr1 points to a constant, so you can't change the value
+    ptr1 = &b; // valid: you can make ptr1 point to a different address
+
+    *ptr2 = 200; // valid: you can change the value at the address ptr2 points to
+    // ptr2 = &a; // invalid: ptr2 is a constant pointer, so you can't change the address it points to
+
+    printf("ptr1 points to value: %d\n", *ptr1);
+    printf("ptr2 points to value: %d\n", *ptr2);
+
+    return 0;
+}
