@@ -1,0 +1,57 @@
+/*
+    Given a string you have to reverse the words of the string.
+    Sample Input = “i love programming very much” 
+    Sample Output = “much very programming love i” 
+
+*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void reverseWord(const char str[], int len){
+
+    char * buf;
+    buf = (char*)malloc(len); // sizeof(char) is always 1 // (char*)malloc((sizeof(char))*len);
+    if(buf == NULL){
+        printf("Memory not allocated\n");
+        return;
+    }
+
+    int i,j = 0;
+    int strlen = len -2;
+   
+
+    while(strlen>= 0){
+        
+        for(j = 0; str[strlen - j] != ' ' &&  (strlen - j)  >=0; j++);
+
+        for(int k = j-1; k >= 0; k--){
+            buf[i++] = str[strlen-k];
+        }
+
+        while(str[strlen] == ' ' && strlen >= 0){
+            buf[i++] = str[strlen--];
+        }
+
+        strlen -= j;        
+    }
+
+    buf[i] = '\0';
+    //printf("string length: %d\n", sizeof(buf));
+    printf("After reverse word string: %3s\n", buf);
+    
+    free(buf);    
+}
+
+int main(){
+ 
+    //char str[] = "I love programming very much";
+    char str[] = ".  I love     programming very much";
+    int strlen = sizeof(str);
+    printf("string length: %d\n", strlen);
+    printf("Before reverse string: %3s\n", str);
+    reverseWord(str, strlen);
+
+    return 0;
+}
