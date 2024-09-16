@@ -73,3 +73,6 @@
 (Q-0037) Reverse word in string.
 
 (Q-0038)  Reverse word only  in string not digit and special char.
+
+(Q-0039) Reverse the words of the string.
+
