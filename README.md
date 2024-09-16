@@ -69,3 +69,5 @@
 (Q-0035) WAP to find the reverse string.
 
 (Q-0036) WAP to find Pointer to constant and constant pointer.
+
+(Q-0037) Reverse word in string.
