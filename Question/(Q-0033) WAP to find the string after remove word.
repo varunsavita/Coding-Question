@@ -42,6 +42,7 @@ void rmWordFunc(const char str[], int len, const char word[]){
 int main(){
 
     char str[] = "varun kumar savita varus kumas savits varun kumar savita"; 
+    //char str[] = "varun savita savits123 kumar savits varun 1234 savita ";
     //char rmword[] = "varus";
     char rmword[10];
     printf("Please enter the remove word \n");
