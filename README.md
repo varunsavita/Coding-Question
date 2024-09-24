@@ -76,3 +76,5 @@
 
 (Q-0039) Reverse the words of the string.
 
+(Q-0040) WAP to take input and display via linked list.
+
