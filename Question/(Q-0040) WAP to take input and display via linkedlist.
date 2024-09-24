@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+void inputNodeData(struct Node *node){
+    
+    printf("please enter the node data\n");
+    scanf("%d",&(node->data));
+    node->next = NULL;
+}
+    
+void displayNodeData(struct Node *node){
+    
+    while(node){
+        printf("%d ",node->data);
+        node = node ->next;
+    }
+}
+
+
+
+
+int main(){
+    int nodeCount;
+    //printf("Please enter node number\n");
+    //scanf("%d",&nodeCount);
+    
+    printf("Please enter the number of nodes: ");
+    while (scanf("%d", &nodeCount) != 1 || nodeCount <= 0) {
+        printf("Invalid input. Please enter a positive integer: ");
+        while(getchar() != '\n'); // Clear invalid input
+    }
+    struct Node *nodeArray = (struct Node*)malloc(sizeof(struct Node) * nodeCount);
+    if(nodeArray == NULL){
+        printf("failed memory allocation\n");
+        return;
+    }
+    
+    for(int i=0; i < nodeCount; i++){
+        inputNodeData(&nodeArray[i]);
+        if (i < nodeCount - 1) {  // Link nodes together
+            nodeArray[i].next = &nodeArray[i + 1];
+        }     
+    }
+    
+    displayNodeData(&nodeArray[0]);
+    
+    free(nodeArray);
+    
+    return 0;
+}
